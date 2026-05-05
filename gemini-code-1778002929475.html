@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali Yasir Kul - Kişisel Web Sitesi</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        .info-box { line-height: 1.6; color: #34495e; }
+        .quiz-box { background: #ecf0f1; padding: 20px; border-radius: 10px; }
+        .question { font-weight: bold; margin-top: 15px; }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover { background-color: #2980b9; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Hakkımda</h1>
+        <div class="info-box">
+            <p>Merhaba, ben <strong>Ali Yasir Kul</strong>.</p>
+            <p>İlkokul eğitimimi <strong>Devran Koleji</strong>'nde başarıyla tamamladım ve okuldan birincilikle mezun oldum. Akademik hayatımda her zaman en iyisini hedefliyorum.</p>
+            <p>En sevdiğim dersler arasında <strong>Matematik, Ahşap Dersi, Bilişim Teknolojileri ve İngilizce</strong> yer alıyor. Şu anda 6. sınıf öğrencisiyim ve eğitimime <strong>Acıbadem Okulları</strong>'nda devam ediyorum.</p>
+            <p>Okul çıkışında eve servisle dönerken dışarıdaki İngilizce tabelaları incelemekten ve yeni kelimeler keşfetmekten büyük keyif alıyorum.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>İngilizce Kelime Quizi</h1>
+        <div class="quiz-box" id="quiz">
+            <p>Ali Yasir'in yolda gördüğü tabelalardan ilham alan kısa bir test:</p>
+            
+            <div class="question">1. "Exit" tabelası ne anlama gelir?</div>
+            <input type="radio" name="q1" value="a"> Giriş <br>
+            <input type="radio" name="q1" value="b"> Çıkış <br>
+            
+            <div class="question">2. "Caution" uyarısı neyi ifade eder?</div>
+            <input type="radio" name="q2" value="a"> Dikkat/Uyarı <br>
+            <input type="radio" name="q2" value="b"> Hoş Geldiniz <br>
+
+            <div class="question">3. "Open" yazan bir dükkan için hangisi doğrudur?</div>
+            <input type="radio" name="q3" value="a"> Kapalıdır <br>
+            <input type="radio" name="q3" value="b"> Açıktır <br>
+
+            <button onclick="checkAnswers()">Sonucu Gör</button>
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            const q3 = document.querySelector('input[name="q3"]:checked');
+
+            if (q1 && q1.value === 'b') score++;
+            if (q2 && q2.value === 'a') score++;
+            if (q3 && q3.value === 'b') score++;
+
+            document.getElementById('result').innerText = "Sonuç: 3 sorudan " + score + " tanesini doğru bildin!";
+        }
+    </script>
+
+</body>
+</html>
