@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali Yasir Kul | Resmi Web Sitesi</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #10b981;
+            --dark-bg: #0f172a;
+            --text-main: #334155;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            margin: 0;
+            background: #f8fafc;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Navigasyon & Hamburger */
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            color: white;
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        nav {
+            position: fixed;
+            left: -100%;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: var(--dark-bg);
+            transition: 0.4s ease;
+            padding-top: 80px;
+            box-shadow: 10px 0 30px rgba(0,0,0,0.3);
+        }
+
+        nav.active { left: 0; }
+
+        nav ul { list-style: none; padding: 0; }
+        nav ul li { padding: 15px 30px; border-bottom: 1px
